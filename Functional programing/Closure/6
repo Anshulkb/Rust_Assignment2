@@ -1,0 +1,16 @@
+
+fn main() {
+    let mut s = String::new();
+
+    let update_string = |str| s.push_str(str);
+
+    exec(update_string);
+
+    println!("{:?}",s);
+}
+
+// FnMut to mutate the value and &'a for reference of ('a) as string which is passed as argument to FnMut
+
+fn exec<'a, F: FnMut(&'a str)>(mut f: F)  {
+    f("hello")
+}
