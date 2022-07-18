@@ -1,0 +1,22 @@
+
+// The program can be run using below code also
+struct TrafficLight {
+    color: String,
+}
+
+impl TrafficLight {
+    
+    pub fn show_state(self)  {
+        println!("the current state is {}", self.color);
+    }
+
+    // Fill in the blank, DON'T use any variants of `Self`.
+    // mut self can be replaced with &mut self 
+    
+    pub fn change_state(mut self) {
+        self.color = "green".to_string()
+    }
+}
+fn main() {
+    println!("Success!");
+}
