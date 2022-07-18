@@ -1,0 +1,29 @@
+/* Make it work 
+- Dont use `_reborrow` and `_count_reborrowed`
+- Dont modify `assert_eq`
+*/
+
+// Here move is used to assign value to variable rather than borrowing
+
+fn main() {
+    let mut count = 0;
+
+    let mut inc = move || {
+        println!("`count`: {}", count);
+        count += 1
+        
+    };
+
+    inc();
+
+//    here '&' is not required as borrowing is not required 
+    let _reborrow = count; 
+
+    inc();
+
+//    here '&mut' is not required as mutable borrowing is not required 
+    
+    let _count_reborrowed = count; 
+
+    assert_eq!(count, 0);
+}
