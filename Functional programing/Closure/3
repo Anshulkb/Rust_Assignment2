@@ -17,3 +17,22 @@ fn main() {
 }
 
 fn take<T>(_v: T) {}
+
+
+
+// Here '&' is used to call the value by reference
+fn main() {
+     let movable = Box::new(3);
+
+     let consume =  || {
+         println!("`movable`: {:?}", movable);
+         take(&movable);
+     };
+
+     consume();
+     consume();
+}
+
+fn take<T>(_v: T) {}
+
+// we can also use move keyword and use '&' which will also work. 
