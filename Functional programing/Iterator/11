@@ -1,0 +1,11 @@
+
+use std::collections::HashMap;
+fn main() {
+    let names = ["sunface", "sunfei"];
+    let ages = [18, 18];
+    
+    // Here first into_iter is user to traverse through names and then zip is used to bind the values of ages to form a hashmap.
+    let folks: HashMap<_, _> = names.into_iter().zip(ages.into_iter()).collect();
+
+    println!("{:?}",folks);
+}
