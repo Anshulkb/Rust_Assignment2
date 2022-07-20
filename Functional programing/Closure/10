@@ -1,0 +1,33 @@
+
+a)
+
+// implementing FnOnce to get the parameter value and returning it as i32. 
+fn create_fn() -> impl FnOnce(i32)->i32{
+    let num = 5;
+
+// here move is used to own the value of 'x'
+    move |x| x + num
+}
+
+
+fn main() {
+    let fn_plain = create_fn();
+    fn_plain(1);
+}
+
+
+b)
+// implementing Fn to get the parameter value as reference and returning it as i32. 
+fn create_fn() -> impl Fn(i32)->i32{
+    let num = 5;
+
+// here move is used to own the value of 'x'
+    move |x| x + num
+}
+
+
+fn main() {
+    let fn_plain = create_fn();
+    fn_plain(1);
+}
+
