@@ -1,0 +1,4 @@
+
+cargo new hello-package
+
+// will create a new package with name hello- package
